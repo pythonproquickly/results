@@ -24,3 +24,17 @@ urlpatterns = [
     re_path(r'^$', views.home, name='home'),  # note re_path
 ]
 ```
+
+add to settings.py:
+
+```
+import configparser
+config = configparser.ConfigParser()
+config._interpolation = configparser.ExtendedInterpolation()
+config.read('.config/access.cfg')
+
+key = config.get('django', 'SECRET_KEY')
+
+# and change this to assign from key now
+SECRET_KEY = key
+```

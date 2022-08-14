@@ -1,9 +1,16 @@
 from pathlib import Path
 
+import configparser
+config = configparser.ConfigParser()
+config._interpolation = configparser.ExtendedInterpolation()
+config.read('.config/access.cfg')
+
+key = config.get('django', 'SECRET_KEY')
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = "django-insecure-9pl%hf*z!z2+a=h2s-4#pku4a#g4!dolte39nzmfer8ud&u@aq"
+SECRET_KEY = key
 
 DEBUG = True
 
