@@ -4,5 +4,15 @@
     <title>Active</title>
 </head>
 <body>
-<h1>Active results here</h1>
+<h1>All active results</h1>
+
+Table of data will go here...
+<br>
+
+{% with 'andy fred bill' as list %}
+  {% for i in list.split %}
+    {{ i }}<br>
+  {% endfor %}
+{% endwith %}
+
 </body>
