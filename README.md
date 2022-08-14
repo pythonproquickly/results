@@ -5,7 +5,7 @@ python manage.py startapp active
 python manage.py runserver
 
 add active to INSTALLED_APPS in ./settings.py
-create home.html in ./active/temaplates
+create home.html in ./active/templates
 add home function in ./active/views.py
 
 make sure ./results/urls.py is like this:
